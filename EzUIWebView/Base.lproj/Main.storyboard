@@ -1,14 +1,100 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LjJ-vH-1LL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Sep-3S-r8C">
+            <objects>
+                <navigationController id="LjJ-vH-1LL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e8d-vF-OBU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="W5O-UY-Ppk" kind="relationship" relationship="rootViewController" id="x2M-zp-9Tv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UxK-q5-ifz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1975" y="-376"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kQm-Fj-kcz">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W5O-UY-Ppk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bok-d2-qQI"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qr0-dj-m8t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="C27-tT-OWE"/>
+                        <segue destination="YLc-4o-xId" kind="relationship" relationship="viewControllers" id="9OZ-jl-qUy"/>
+                        <segue destination="UgJ-4T-i5H" kind="relationship" relationship="viewControllers" id="FPC-kY-HBw"/>
+                        <segue destination="MKp-cY-WlW" kind="relationship" relationship="viewControllers" id="ged-qu-rxb"/>
+                        <segue destination="ayl-Oc-NoG" kind="relationship" relationship="viewControllers" id="wCW-w6-CoH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iV-Xb-eVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1174" y="-375"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="08c-Jp-GXJ">
+            <objects>
+                <viewController id="MKp-cY-WlW" customClass="LoadURL" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0J-6v-5xX"/>
+                        <viewControllerLayoutGuide type="bottom" id="EFZ-JF-Aoo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6WD-jw-5SI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc6-Aj-RPD">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-xc-dgz"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-3t-AxR">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hc6-Aj-RPD" secondAttribute="bottom" constant="-8" id="1K1-Ac-kKo"/>
+                            <constraint firstItem="hh1-xc-dgz" firstAttribute="centerY" secondItem="6WD-jw-5SI" secondAttribute="centerY" id="CWx-xw-Y3D"/>
+                            <constraint firstItem="hc6-Aj-RPD" firstAttribute="leading" secondItem="6WD-jw-5SI" secondAttribute="leading" id="Has-8h-7Dt"/>
+                            <constraint firstItem="Lff-3t-AxR" firstAttribute="top" secondItem="b0J-6v-5xX" secondAttribute="bottom" id="OLH-Qx-j5w"/>
+                            <constraint firstItem="hh1-xc-dgz" firstAttribute="centerX" secondItem="6WD-jw-5SI" secondAttribute="centerX" id="eEB-U7-7m9"/>
+                            <constraint firstAttribute="trailing" secondItem="hc6-Aj-RPD" secondAttribute="trailing" id="fbY-1s-Vun"/>
+                            <constraint firstItem="Lff-3t-AxR" firstAttribute="leading" secondItem="6WD-jw-5SI" secondAttribute="leading" id="j2J-Mu-FLa"/>
+                            <constraint firstItem="hc6-Aj-RPD" firstAttribute="top" secondItem="6WD-jw-5SI" secondAttribute="top" constant="30" id="vxO-3i-gxV"/>
+                            <constraint firstAttribute="trailing" secondItem="Lff-3t-AxR" secondAttribute="trailing" id="yBy-4t-brI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Web" image="web.png" id="IbI-Qo-WJK"/>
+                    <connections>
+                        <outlet property="myActivity" destination="hh1-xc-dgz" id="47G-ZY-1fK"/>
+                        <outlet property="urlString" destination="Lff-3t-AxR" id="LhV-RU-6on"/>
+                        <outlet property="webView" destination="hc6-Aj-RPD" id="TLO-YN-XV8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbe-I2-Yps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1175.2" y="-1068.215892053973"/>
+        </scene>
+        <!--PDF-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PDF" id="BYZ-38-t0r" customClass="ViewBooks" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +102,248 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-ML-x5v">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Md-c0-A65">
+                                    <size key="itemSize" width="80" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCollection" id="69a-WH-cSL" customClass="ACellBook" customModule="EzUIWebView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wK1-3j-4FR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4jP-ub-2Ep"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9aN-ML-x5v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AUU-zD-TY0"/>
+                            <constraint firstItem="9aN-ML-x5v" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JW3-yR-KSZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9aN-ML-x5v" secondAttribute="bottom" constant="8" id="R6i-Ok-c3N"/>
+                            <constraint firstItem="9aN-ML-x5v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RGD-iL-dHg"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="PDF" image="pdf.png" id="Obm-ru-bcI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-223" y="-1176"/>
+        </scene>
+        <!--Detail Book-->
+        <scene sceneID="xXa-pb-mjU">
+            <objects>
+                <viewController storyboardIdentifier="DetailBook" id="Gb0-Ha-ctH" customClass="DetailBook" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bgA-Mm-fPg"/>
+                        <viewControllerLayoutGuide type="bottom" id="5OS-iY-MR3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yOg-eX-Xkg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4o-Bx-tAR">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-e9-ZDY"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0u-N9-ghI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4bK-kP-QST"/>
+                                    <constraint firstAttribute="width" constant="121" id="gjP-Rr-ae1"/>
+                                </constraints>
+                                <state key="normal" title="Get current time"/>
+                                <connections>
+                                    <action selector="getCurrentTime:" destination="Gb0-Ha-ctH" eventType="touchUpInside" id="dHi-aF-Kh9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FcF-e9-ZDY" firstAttribute="centerY" secondItem="yOg-eX-Xkg" secondAttribute="centerY" id="0JU-3n-voq"/>
+                            <constraint firstItem="V0u-N9-ghI" firstAttribute="top" secondItem="bgA-Mm-fPg" secondAttribute="bottom" id="DHy-cv-3x3"/>
+                            <constraint firstAttribute="trailing" secondItem="u4o-Bx-tAR" secondAttribute="trailing" id="H06-ay-QhQ"/>
+                            <constraint firstItem="u4o-Bx-tAR" firstAttribute="top" secondItem="yOg-eX-Xkg" secondAttribute="top" id="LBx-mj-qyg"/>
+                            <constraint firstItem="u4o-Bx-tAR" firstAttribute="leading" secondItem="yOg-eX-Xkg" secondAttribute="leading" id="QGM-9M-7Op"/>
+                            <constraint firstItem="5OS-iY-MR3" firstAttribute="top" secondItem="u4o-Bx-tAR" secondAttribute="bottom" id="Rne-yB-0ci"/>
+                            <constraint firstItem="FcF-e9-ZDY" firstAttribute="centerX" secondItem="yOg-eX-Xkg" secondAttribute="centerX" id="SHR-Y5-Owq"/>
+                            <constraint firstItem="V0u-N9-ghI" firstAttribute="leading" secondItem="yOg-eX-Xkg" secondAttribute="leading" id="lWs-X7-slp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myActive" destination="FcF-e9-ZDY" id="We4-Gg-huT"/>
+                        <outlet property="webView" destination="u4o-Bx-tAR" id="D4w-kO-k8G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XtN-KC-lIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1175.2" y="429.53523238380814"/>
+        </scene>
+        <!--DOCX-->
+        <scene sceneID="4cw-OY-JBs">
+            <objects>
+                <viewController title="DOCX" id="UgJ-4T-i5H" customClass="ViewBooks" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z9w-W7-J9a"/>
+                        <viewControllerLayoutGuide type="bottom" id="6qw-gc-eFm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hwf-3d-j02">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UxU-r2-acN">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Qr-hf-pvj">
+                                    <size key="itemSize" width="80" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCollection" id="Wwz-Ja-RuH" customClass="ACellBook" customModule="EzUIWebView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="UgJ-4T-i5H" id="cn6-dK-Ley"/>
+                                    <outlet property="delegate" destination="UgJ-4T-i5H" id="3OS-pe-G88"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UxU-r2-acN" firstAttribute="top" secondItem="Z9w-W7-J9a" secondAttribute="bottom" id="Zn4-OE-1uu"/>
+                            <constraint firstItem="UxU-r2-acN" firstAttribute="leading" secondItem="hwf-3d-j02" secondAttribute="leadingMargin" id="mCe-Nf-ow2"/>
+                            <constraint firstItem="6qw-gc-eFm" firstAttribute="top" secondItem="UxU-r2-acN" secondAttribute="bottom" constant="8" id="qtv-pE-9tI"/>
+                            <constraint firstItem="UxU-r2-acN" firstAttribute="trailing" secondItem="hwf-3d-j02" secondAttribute="trailingMargin" id="x9m-Ze-Ul7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DOCX" image="doc.png" id="wiI-76-QFJ" userLabel="DOCX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Uj-pL-Wl7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="430"/>
+        </scene>
+        <!--HTML-->
+        <scene sceneID="2xA-Fs-lbo">
+            <objects>
+                <viewController title="HTML" id="YLc-4o-xId" customClass="ViewBooks" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcJ-cD-435"/>
+                        <viewControllerLayoutGuide type="bottom" id="UJc-BM-ZKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i5q-bO-Fvk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oRJ-h4-JJk">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lzs-au-PJN">
+                                    <size key="itemSize" width="80" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCollection" id="vLo-yE-CML" customClass="ACellBook" customModule="EzUIWebView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YLc-4o-xId" id="zex-pq-ZaL"/>
+                                    <outlet property="delegate" destination="YLc-4o-xId" id="XAr-Eg-deV"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oRJ-h4-JJk" firstAttribute="leading" secondItem="i5q-bO-Fvk" secondAttribute="leadingMargin" id="TFD-Ew-PMm"/>
+                            <constraint firstItem="oRJ-h4-JJk" firstAttribute="top" secondItem="gcJ-cD-435" secondAttribute="bottom" id="e3N-ZM-Hm8"/>
+                            <constraint firstItem="oRJ-h4-JJk" firstAttribute="trailing" secondItem="i5q-bO-Fvk" secondAttribute="trailingMargin" id="oHD-Ib-VZu"/>
+                            <constraint firstItem="UJc-BM-ZKe" firstAttribute="top" secondItem="oRJ-h4-JJk" secondAttribute="bottom" constant="8" id="yzz-cr-Mmy"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="HTML" image="html.png" id="doh-yA-YZy" userLabel="HTML"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egr-ml-P1Y" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="-376"/>
+        </scene>
+        <!--All-->
+        <scene sceneID="mph-gO-4QR">
+            <objects>
+                <viewController title="All" id="ayl-Oc-NoG" customClass="ViewBooks" customModule="EzUIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u4n-hH-KL9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sxh-JP-exX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l5s-Nd-3Oe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-FX-BX6">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zRg-KJ-pgA">
+                                    <size key="itemSize" width="80" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellCollection" id="MGb-tf-XR0" customClass="ACellBook" customModule="EzUIWebView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ayl-Oc-NoG" id="Fcd-eD-Tk6"/>
+                                    <outlet property="delegate" destination="ayl-Oc-NoG" id="jFk-Re-6gm"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sxh-JP-exX" firstAttribute="top" secondItem="ahE-FX-BX6" secondAttribute="bottom" constant="8" id="Mqh-Ho-FsC"/>
+                            <constraint firstItem="ahE-FX-BX6" firstAttribute="leading" secondItem="l5s-Nd-3Oe" secondAttribute="leadingMargin" id="Wgp-Mx-pbd"/>
+                            <constraint firstItem="ahE-FX-BX6" firstAttribute="trailing" secondItem="l5s-Nd-3Oe" secondAttribute="trailingMargin" id="fFS-Pb-hea"/>
+                            <constraint firstItem="ahE-FX-BX6" firstAttribute="top" secondItem="u4n-hH-KL9" secondAttribute="bottom" id="kg1-eT-4pj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="All" image="doc.png" id="Gfo-eA-mVi" userLabel="DOCX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="koS-dQ-HRi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-376"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doc.png" width="30" height="30"/>
+        <image name="html.png" width="22" height="30"/>
+        <image name="pdf.png" width="23" height="30"/>
+        <image name="web.png" width="30" height="30"/>
+    </resources>
 </document>
